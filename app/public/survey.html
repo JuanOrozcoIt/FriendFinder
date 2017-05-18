@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Friend Finder</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">New Friends</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h2 id="displayThis"></h2>
+          <div id="displayThisToo"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <div class="row" id="surveyDiv">
+      <h1>Matching Survey</h1>
+      <hr>
+        <div>
+          <h3><strong>About You</strong></h3>
+          <label for="nameEnter">What do you prefer to be called? (required)</label>
+          <input type="text" class="form-control" id="nameEnter" aria-describedby="nameHelp" placeholder="Your Name">
+          <small id="nameHelp" class="form-text text-muted">Real name (or nick name)!</small>
+        </div>
+        <div>
+          <label for="photoURL">What things do you look like? (required)</label>
+          <input type="text" class="form-control" aria-describedby="photoHelp" id="photoURL" placeholder="Photo URL">
+          <small id="photoHelp" class="form-text text-muted">Pic sharing time!</small>
+        </div>
+        <hr>
+        <div>
+          <label for="questionOne"><h3>Question 1</h3></label>
+          <p>I really like StarWars!</p>
+          <select class="form-control widthControl" id="questionOne">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div>
+          <label for="questionTwo"><h3>Question 2</h3></label>
+          <p>I need action to live.</p>
+          <select class="form-control widthControl" id="questionTwo">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div>
+          <label for="questionThree"><h3>Question 3</h3></label>
+          <p>I believe in the  Force.</p>
+          <select class="form-control widthControl" id="questionThree">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div>
+          <label for="questionFour"><h3>Question 4</h3></label>
+          <p>Star Cream is my favorite food.</p>
+          <select class="form-control widthControl" id="questionFour">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div>
+          <label for="questionFive"><h3>Question 5</h3></label>
+          <p>I prefer a spa or resort to home or air-bnb.</p>
+          <select class="form-control widthControl" id="questionFive">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div>
+          <label for="questionSix"><h3>Question 6</h3></label>
+          <p>I always try new things, I am adventurous.</p>
+          <select class="form-control widthControl" id="questionSix">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div>
+          <label for="questionSeven"><h3>Question 7</h3></label>
+          <p>I like to play games.</p>
+          <select class="form-control widthControl" id="questionSeven">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div>
+          <label for="questionEight"><h3>Question 8</h3></label>
+          <p>I would rather be at the beach than anywhewre else.</p>
+          <select class="form-control widthControl" id="questionEight">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div>
+          <label for="questionNine"><h3>Question 9</h3></label>
+          <p>The more the merrier!</p>
+          <select class="form-control widthControl" id="questionNine">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <div>
+          <label for="questionTen"><h3>Question 10</h3></label>
+          <p>I never met a puppy I did not want to pet.</p>
+          <select class="form-control widthControl" id="questionTen">
+            <option selected disabled>Please select</option>
+            <option value=1>1 (Strongly Agree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+    </div><br />
+      <button type="button" data-toggle="modal" data-target="#friendModal" class="btn btn-primary" id="surveySubmit">Reveal Friend</button>
+      <hr />
+      <a href="/api/friends">API Friends List</a> | <a href="https://github.com/JuanOrozcoIT/FriendFinder" target="_blank">GitHub Repository</a>
+  </div>
+  <script type="text/javascript">
+  $("#surveySubmit").on("click", function(){
+  		// Here we grab the form elements
+      var q1v = $('#questionOne').val();
+      var q2v = $('#questionTwo').val();
+      var q3v = $('#questionThree').val();
+      var q4v = $('#questionFour').val();
+      var q5v = $('#questionFive').val();
+      var q6v = $('#questionSix').val();
+      var q7v = $('#questionSeven').val();
+      var q8v = $('#questionEight').val();
+      var q9v = $('#questionNine').val();
+      var q10v = $('#questionTen').val()
+  		var newFriend = {
+  			friendName: $('#nameEnter').val().trim(),
+  			photoURL: $('#photoURL').val().trim(),
+  			questionArray: [parseFloat(q1v), parseFloat(q2v), parseFloat(q3v), parseFloat(q4v), parseFloat(q5v), parseFloat(q6v), parseFloat(q7v), parseFloat(q8v), parseFloat(q9v), parseFloat(q10v)],
+  		};
+  		console.log(newFriend);
+  var currentURL = window.location.origin;
+  function resetForm(){
+        $('#nameEnter').val(" ");
+  			$('#photoURL').val(" ");
+        $('.widthControl').val(" ");
+      }
+    var testVal = $('.widthControl').val();
+    var nameEntered = $('#nameEnter').val();
+    var urlEntered = $('#photoURL').val();
+    if(testVal === null || nameEntered<3 || urlEntered<10){
+        alert("Please Enter All Values")
+      }else{
+        $.post(`${currentURL}/api/friends`, newFriend).done(function(response){
+              var picURL = response.url
+              console.log(response);
+              $("#displayThis").text(response.name);
+              $("#displayThisToo").html("<img height='300px' src='"+picURL+"'/>");
+              $("#friendModal").modal()
+          });
+      };
+      resetForm();
+  return false;
+  });
+  </script>
+</body>
+</html>
